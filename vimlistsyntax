@@ -1,0 +1,22 @@
+#!/bin/bash
+#
+# vimlistsyntax
+#
+# Script to list all available syntax hightlight styles for Vim.
+#
+# Credit & thanks to 'habamax' and 'm_ben' on libera.chat #vim
+#
+# Pico <pico@picorealm.net>
+# 
+# Wed, 07 Dec 2022 18:43:01 -0700
+#
+
+/usr/bin/vim -c 'call writefile(getcompletion("", "syntax"), "/tmp/ahw2AkoCh7figh4")' -c q 2>/dev/null
+
+#while read line; do
+#    echo "$line"
+#done < "/tmp/ahw2AkoCh7figh4"
+
+/usr/bin/column -x /tmp/ahw2AkoCh7figh4 | less
+
+rm /tmp/ahw2AkoCh7figh4
